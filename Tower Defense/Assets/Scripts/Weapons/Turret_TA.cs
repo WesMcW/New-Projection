@@ -9,6 +9,8 @@ public class Turret_TA : MonoBehaviour
     BoxCollider targetingBox;
     GameObject current_target;
     public WepCore weapon;
+    public Transform turretHead;
+    public int turnspd;
     public int count_inrange = 0;
     [SerializeField] List<GameObject> hostiles = new List<GameObject>(); // make this array of enemy components containing the data needed for the agent
     void Start()
@@ -63,12 +65,21 @@ public class Turret_TA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        current_target = FindClosestHostile();
+        
         if (current_target != null)
         {
-            Debug.Log("Firing turret!");
+            // Rotate turret head to face the target
+            var m_lookAtRotation = Quaternion.LookRotation(current_target.transform.position - turretHead.position);
+
+            turretHead.rotation = Quaternion.RotateTowards(turretHead.rotation, m_lookAtRotation, turnspd * Time.deltaTime);
+
+            //Debug.Log("Firing turret!");
             if (weapon.readyToShoot)
                 weapon.Shoot();
+        } else
+        {
+            //target is null, return to resting rotation and continue checking for targets
+            current_target = FindClosestHostile();
         }
     }
 }

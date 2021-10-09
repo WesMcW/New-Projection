@@ -71,7 +71,7 @@ public class WepCore : MonoBehaviour
     {
         // MOVE this over to player manager and make it work
         // Weapon controls is called within update
-        if (holdToShoot)
+        /*if (holdToShoot)
         {
             shooting0 = Input.GetKey(KeyCode.Mouse0);
             shooting1 = Input.GetKey(KeyCode.Mouse1);
@@ -84,7 +84,9 @@ public class WepCore : MonoBehaviour
             shooting1 = Input.GetKeyDown(KeyCode.Mouse1);
         }
         //Debug.Log(shooting0);
-        if (Input.GetKeyDown(KeyCode.R) && clipCurrent < clipSize && !reloading) Reload();
+          if (Input.GetKeyDown(KeyCode.R) && clipCurrent < clipSize && !reloading) Reload();
+        */
+
 
         //Shoot
         if (readyToShoot && shooting0 && !reloading && clipCurrent > 0)
@@ -139,8 +141,6 @@ public class WepCore : MonoBehaviour
             rld.enabled = false;
             ammo.enabled = true;
         }*/
-            
-
 
             WepControls();
 
