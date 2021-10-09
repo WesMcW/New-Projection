@@ -7,15 +7,19 @@ public class PlayerAnimationControls : MonoBehaviour
     public Animator animator;
     public GameObject camera;
 
-    public Vector3 cameraLocationOffset;
+    public Vector3 camOffset;
+    public int animationTime;
+    public float camStatus;
 
-    Vector3 cameraLocationDefault;
-    
+    Vector3 camDefault;
+
+    float animationStatus = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraLocationDefault = new Vector3(camera.transform.position.x, camera.transform.position.y, camera.transform.position.z);
+        camDefault = new Vector3(camera.transform.localPosition.x, camera.transform.localPosition.y, camera.transform.localPosition.z);
+        camOffset += camDefault;
     }
 
     // Update is called once per frame
@@ -25,12 +29,35 @@ public class PlayerAnimationControls : MonoBehaviour
 
         if (vert == 1)
         {
-            animator.SetBool("isRunning", true);
+            if (animationStatus < animationTime)
+            {
+                animationStatus += Time.deltaTime;
+            } else if (animationStatus > animationTime)
+            {
+                animationStatus = animationTime;
+            }
 
-
+            animator.SetFloat("Blend", animationStatus);
         } else
         {
-            animator.SetBool("isRunning", false);
+            if (animationStatus > 0)
+            {
+                animationStatus -= 2.5f * Time.deltaTime;
+            }
+            else if (animationStatus < 0)
+            {
+                animationStatus = 0;
+            }
+
+            animator.SetFloat("Blend", animationStatus);
+        }
+
+        if (animationStatus > camStatus)
+        {
+            camera.transform.localPosition = camOffset;
+        } else
+        {
+            camera.transform.localPosition = camDefault;
         }
     }
 }

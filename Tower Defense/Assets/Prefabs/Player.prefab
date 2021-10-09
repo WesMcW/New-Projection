@@ -114,7 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 753701424061079215}
   camera: {fileID: 0}
-  cameraLocationOffset: {x: 0, y: 0, z: 0}
+  camOffset: {x: 0, y: 0, z: 0}
+  frameCount: 0
 --- !u!1 &581090521159894599
 GameObject:
   m_ObjectHideFlags: 0
