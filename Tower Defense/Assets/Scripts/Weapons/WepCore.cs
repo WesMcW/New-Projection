@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WepV2 : MonoBehaviour
+public class WepCore : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -32,9 +32,9 @@ public class WepV2 : MonoBehaviour
     private float curr_spinup;
     private void Start()
     {
-        Debug.Log("Loaded weapon prefab: " + stats.wepName);
-        ammo = GameObject.Find("AmmoTXT").GetComponent<Text>();
-        rld = GameObject.Find("RldTXT").GetComponent<Text>();
+        Debug.Log("Loaded weapon obj: " + stats.wepName);
+        //ammo = GameObject.Find("AmmoTXT").GetComponent<Text>();
+        //rld = GameObject.Find("RldTXT").GetComponent<Text>();
         
     }
     private void OnEnable()
@@ -124,11 +124,12 @@ public class WepV2 : MonoBehaviour
 
     public void ResetShot()
     {
+        // called by INVOKE above on a time delay
         readyToShoot = true;
     }
     void Update()
     {
-        ammo.text = "[" +clipCurrent+"/"+ clipSize+"]";
+        //ammo.text = "[" +clipCurrent+"/"+ clipSize+"]";
         if (reloading)
         {
             rld.enabled = true;
