@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - Destructible
   - Hub
-=======
-  - Enemy
->>>>>>> Stashed changes
+  - Bullet
+  - Turret
   layers:
   - Default
   - TransparentFX
