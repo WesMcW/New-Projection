@@ -5,6 +5,8 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
 
+    public int addAmount = 0;
+
     int amount = 0;
 
     // Start is called before the first frame update
@@ -25,7 +27,7 @@ public class Collectable : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<CollectableManager>())
             {
-                collision.gameObject.GetComponent<CollectableManager>().currencyAmount++;
+                collision.gameObject.GetComponent<CollectableManager>().currencyAmount = collision.gameObject.GetComponent<CollectableManager>().currencyAmount + addAmount;
             }
            
         }
