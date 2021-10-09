@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Destructible
   - Hub
+  - Bullet
+  - Turret
   layers:
   - Default
   - TransparentFX
