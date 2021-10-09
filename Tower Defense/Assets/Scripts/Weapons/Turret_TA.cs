@@ -7,12 +7,13 @@ public class Turret_TA : MonoBehaviour
     // Will use the collider on the Managers object as a targeting range. Using 'OnCollision'.
     // Start is called before the first frame update
     BoxCollider targetingBox;
+    GameObject current_target;
+    public WepCore weapon;
     public int count_inrange = 0;
     [SerializeField] List<GameObject> hostiles = new List<GameObject>(); // make this array of enemy components containing the data needed for the agent
     void Start()
     {
         targetingBox = GetComponent<BoxCollider>();
-        
     }
 
     private void OnTriggerEnter(Collider c)
@@ -43,10 +44,31 @@ public class Turret_TA : MonoBehaviour
             
         }
     }
-    void SortHostilesByDistance(){
+    GameObject FindClosestHostile(){
+        GameObject closest = null;
+        float lowest_dist = Mathf.Infinity;
+        for (int i = 0; i < hostiles.Count; i++)
+        {
+            GameObject o = hostiles[i];
+            float dist = Vector3.Distance(o.transform.position, transform.position);
+            if (dist < lowest_dist)
+            {
+                closest = o;
+                lowest_dist = dist;
+            }
+        }
+
+        return closest;
     }
     // Update is called once per frame
     void Update()
     {
+        current_target = FindClosestHostile();
+        if (current_target != null)
+        {
+            Debug.Log("Firing turret!");
+            if (weapon.readyToShoot)
+                weapon.Shoot();
+        }
     }
 }

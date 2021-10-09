@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     public int dmg = 1;
-    public float bullet_velocity = 1;
+    public float bullet_velocity = 50f;
     public float TTL = 3f;
     Rigidbody rb;
 
@@ -14,16 +14,19 @@ public abstract class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
+    
+    
     int GetDamage()
     {
         return dmg;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        rb.velocity = transform.forward * bullet_velocity;
+
         if (TTL > 0)
-            TTL -= Time.deltaTime;
+            TTL -= Time.fixedDeltaTime;
         else
             Destroy(gameObject);
     }

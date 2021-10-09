@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354864831740023865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.15, z: 12.64}
+  m_LocalPosition: {x: 0, y: 2.04, z: 12.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8353244317862991164}
@@ -2461,8 +2461,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8353244317862991164}
-  - component: {fileID: 8244502438129837046}
-  - component: {fileID: 8275410077483762674}
   - component: {fileID: 5229946643881884401}
   m_Layer: 0
   m_Name: TurretA
@@ -2487,135 +2485,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8244502438129837046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8357247087591673606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f0e3a7f55ca4bb6831001963d4c828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserShoot:
-  - {fileID: 100000, guid: e5f967868aac049a0bba3e191bc7f604, type: 3}
-  shootPosition: {fileID: 8355255284092999948}
-  currentLaser: 0
-  shootSpeed: 6000
-  delay: 5
-  targetGameobject: {fileID: 0}
-  gunGameobject: {fileID: 8353411993426471334}
-  turretDegreesPerSecond: 45
-  gunDegreesPerSecond: 45
-  maxgunAngle: 90
-  gunRecoil: 1.2
---- !u!82 &8275410077483762674
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8357247087591673606}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3378dd618aec94a6492818f4c79b129f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.9
-  m_Pitch: 0.7
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 100
-  Pan2D: 0
-  rolloffMode: 2
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.99404526
-      inSlope: -3.9377222
-      outSlope: -3.9377222
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.16853663
-      value: 0.5381508
-      inSlope: -1.7350906
-      outSlope: -1.7350906
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0.12021451
-      outSlope: -0.12021451
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &5229946643881884401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 0ad5074a7620eca4382fa1a9d04fb848, type: 2}
-  projectile: {fileID: 0}
+  projectile: {fileID: 989451256620863011, guid: 606845e3c9d16f04f8758b05f5e13944, type: 3}
   reloading: 0
   firePoints:
   - {fileID: 7040614499246818646}

@@ -19,7 +19,7 @@ public class WepCore : MonoBehaviour
     public bool reloading = false;
     public Transform[] firePoints;
     private bool holdToShoot;
-    private bool readyToShoot;
+    public bool readyToShoot;
     private bool shooting0;
     private bool shooting1;
     private int bulletsShot;
@@ -99,7 +99,7 @@ public class WepCore : MonoBehaviour
 
     }
 
-    private void Shoot()
+    public void Shoot()
     {
 
         readyToShoot = false;
@@ -113,7 +113,7 @@ public class WepCore : MonoBehaviour
         }
 
         // Instantiate bullet at the active firepoint
-        Instantiate(projectile, firePoints[activeFP].position, transform.rotation);
+        Instantiate(projectile, firePoints[activeFP].position, firePoints[activeFP].rotation);
 
         clipCurrent--;
         bulletsShot--;
@@ -130,7 +130,7 @@ public class WepCore : MonoBehaviour
     void Update()
     {
         //ammo.text = "[" +clipCurrent+"/"+ clipSize+"]";
-        if (reloading)
+        /*if (reloading)
         {
             rld.enabled = true;
             ammo.enabled = false;
@@ -138,10 +138,16 @@ public class WepCore : MonoBehaviour
         {
             rld.enabled = false;
             ammo.enabled = true;
-        }
+        }*/
             
 
 
             WepControls();
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (readyToShoot)
+                Shoot();
+        }
     }
 }
