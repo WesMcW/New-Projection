@@ -49,6 +49,11 @@ public class WepCore : MonoBehaviour
         readyToShoot = true;
     }
 
+    public Transform ReturnActiveFP()
+    {
+        return firePoints[activeFP];
+    }
+
     public bool Reload()
     {
         if (clipCurrent < clipSize && reloading == false)

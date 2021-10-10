@@ -24,17 +24,17 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision c)
     {
-        if (other.gameObject.CompareTag("Hub"))
+        if (c.gameObject.CompareTag("Hub"))
         {
-            other.gameObject.GetComponent<HubHealth>().hubHp -= damage;
+            c.gameObject.GetComponent<HubHealth>().hubHp -= damage;
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Bullet"))
+        if (c.gameObject.CompareTag("Bullet"))
         {
-            //health -= other.gameObject.GetComponent<Projectile>().damage;
-            Destroy(other.gameObject);
+            health -= c.gameObject.GetComponent<Projectile>().dmg;
+            Destroy(c.gameObject);
         }
     }
 
