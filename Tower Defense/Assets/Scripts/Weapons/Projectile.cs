@@ -14,8 +14,12 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.transform.CompareTag("Enemy"))
+            Destroy(gameObject);
+    }
     int GetDamage()
     {
         return dmg;
