@@ -23,7 +23,7 @@ public class TurretBuilder : MonoBehaviour
         targetingsystem = GetComponent<Turret_TA>();
         playerobj = GameObject.Find("Player");
         turret.gameObject.SetActive(false);
-        buyText.text = String.Format("Buy {0} for {1}", targetingsystem.weapon.stats.name, cost*2);
+        buyText.text = String.Format("Buy {0} for {1}", targetingsystem.weapon.stats.name, cost);
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class TurretBuilder : MonoBehaviour
         {
             inRange = true;
 
-            if (Input.GetKeyDown(KeyCode.B) && other.gameObject.GetComponent<CollectableManager>().currencyAmount >= cost)
+            if (Input.GetKeyDown(KeyCode.B) && other.gameObject.GetComponent<CollectableManager>().currencyAmount >= cost && turret.gameObject.active == false)
             {
                 //Build the turret at this turret location
                 turret.gameObject.SetActive(true);
