@@ -69,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
 
     public IEnumerator NewRound()
     {
-        maxGoonCount += roundCount;
+        maxGoonCount += roundCount * 2;
         goonsKilled = 0;
         yield return new WaitForSeconds(timeBtwnRound);
         roundCount++;

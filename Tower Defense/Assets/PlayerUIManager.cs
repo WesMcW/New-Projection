@@ -20,7 +20,7 @@ public class PlayerUIManager : MonoBehaviour
     public float turretDisplayRange = 0;
 
     private void Start()
-    {  
+    {
         spawner = GameObject.Find("GlobalManagers").GetComponent<EnemySpawner>();
         turrets = GameObject.FindGameObjectsWithTag("Turret");
     }
@@ -46,12 +46,13 @@ public class PlayerUIManager : MonoBehaviour
         foreach (GameObject turret in turrets)
         {
             float distance = Vector3.Distance(transform.position, turret.transform.position);
-            
+
 
             if (distFromPlayer == null)
             {
                 distFromPlayer = distance;
-            } else if (distance < distFromPlayer)
+            }
+            else if (distance < distFromPlayer)
             {
                 distFromPlayer = distance;
                 closeTurret = turret;
@@ -68,15 +69,13 @@ public class PlayerUIManager : MonoBehaviour
 
         bool built = nearbyTurret.GetComponentInChildren<TurretBuilder>().turret.active;
 
-        int cost = nearbyTurret.GetComponentInChildren<TurretBuilder>().cost;
-        int resources = GetComponent<CollectableManager>().currencyAmount;
-
         float turretDistance = Vector3.Distance(transform.position, nearbyTurret.transform.position);
 
-        if (turretDistance < turretDisplayRange && !built && cost < resources)
+        if (turretDistance < turretDisplayRange && !built)
         {
             turretsDisplay.SetActive(true);
-        } else
+        }
+        else
         {
             turretsDisplay.SetActive(false);
         }
