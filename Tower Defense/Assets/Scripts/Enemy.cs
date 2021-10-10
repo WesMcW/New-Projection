@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int health = 10;
     public int damage = 1;
 
+    public bool dead = false;
+
     private NavMeshAgent agent;
     public Transform target;
 
@@ -22,8 +24,13 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            EnemySpawner.inst.goonsKilled++;
+            //EnemySpawner.inst.goonsKilled++;
             GetComponentInChildren<EnemyAnimationControls>().enableRagdoll();
+            if (!dead)
+            {
+                EnemySpawner.inst.goonsKilled += 1;
+                dead = true;
+            }
             Invoke("Death", 2f);
         }
     }
@@ -48,6 +55,7 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
+        //EnemySpawner.inst.goonsKilled += 1;
         Destroy(gameObject);
     }
 }

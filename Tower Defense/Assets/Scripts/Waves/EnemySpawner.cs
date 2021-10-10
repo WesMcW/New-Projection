@@ -30,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartCoroutine("RoundWait");
+        if (goonsKilled == maxGoonCount)
+            StartCoroutine("NewRound");
     }
 
     public void StartSpawning()
@@ -67,9 +67,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public IEnumerator RoundWait()
+    public IEnumerator NewRound()
     {
+        goonsKilled = 0;
         yield return new WaitForSeconds(timeBtwnRound);
+        roundCount++;
         StartSpawning();
     }
 }

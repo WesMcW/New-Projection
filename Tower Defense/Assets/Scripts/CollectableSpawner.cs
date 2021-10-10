@@ -29,7 +29,7 @@ public class CollectableSpawner : MonoBehaviour
 
     public void spawn()
     {
-        Instantiate(currency, transform.position, Quaternion.identity);
+        Instantiate(currency, transform.position, Quaternion.Euler(0, 0, 90));
     }
 
     public void timeDelay()
