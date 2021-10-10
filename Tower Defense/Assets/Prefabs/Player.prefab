@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 753701424061079213}
   - component: {fileID: 753701424061079200}
   - component: {fileID: 4267372911257358442}
+  - component: {fileID: 930384841}
+  - component: {fileID: 930384847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -112,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c490a09f9cf5b42b2351a50c8d7be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 753701424061079215}
   camera: {fileID: 753701425320039965}
   forwardOffset: {x: 0, y: -0.1, z: 0.2}
   leftOffset: {x: -0.35, y: -0.15, z: 0.1}
@@ -132,10 +133,37 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!136 &930384841
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483229459292635610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &930384847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483229459292635610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b88bd7a039d8b489e90ef9e185cdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyAmount: 0
 --- !u!1 &581090521159894599
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753701425320039965}
   m_LocalRotation: {x: -0.0000000026817588, y: -0, z: -1.1214089e-11, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0.2}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1008549093365259104}

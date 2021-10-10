@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
 {
 
     public int addAmount = 0;
+    public float rotateSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,8 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 rotation = new Vector3(0, 0, 0);
-        rotation.x = transform.rotation.x;
-        rotation.y = transform.rotation.y;
-        rotation.z = transform.rotation.z;
+
+        transform.Rotate(transform.up, 360* rotateSpeed * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision collision)
