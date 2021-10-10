@@ -21,5 +21,8 @@ public class PlayerUIManager : MonoBehaviour
         secsplayed += Time.deltaTime;
         timer.text = String.Format("{0:0.##}", secsplayed);
         roundCount.text = spawner.roundCount.ToString();
+
+        currencyCount.text = GetComponent<CollectableManager>().currencyAmount.ToString();
+        roundCount.text;
     }
 }
