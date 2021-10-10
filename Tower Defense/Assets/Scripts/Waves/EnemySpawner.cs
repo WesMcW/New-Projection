@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        canSpawn = true;
         StartSpawning();
     }
 
