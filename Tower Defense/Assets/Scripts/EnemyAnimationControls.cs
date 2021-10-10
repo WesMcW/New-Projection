@@ -21,6 +21,7 @@ public class EnemyAnimationControls : MonoBehaviour
 
     public void enableRagdoll()
     {
+        transform.parent.tag = "Respawn";
         gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
         foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
         {

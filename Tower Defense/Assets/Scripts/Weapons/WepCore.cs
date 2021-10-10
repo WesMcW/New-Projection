@@ -32,6 +32,7 @@ public class WepCore : MonoBehaviour
     private float curr_spinup;
     private void Start()
     {
+        projectile.GetComponent<Projectile>().dmg = stats.dps; // set the projectile damage to reflect the loaded statistic profile
         Debug.Log("Loaded weapon obj: " + stats.wepName);
         //ammo = GameObject.Find("AmmoTXT").GetComponent<Text>();
         //rld = GameObject.Find("RldTXT").GetComponent<Text>();

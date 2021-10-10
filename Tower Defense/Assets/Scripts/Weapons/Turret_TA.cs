@@ -56,6 +56,14 @@ public class Turret_TA : MonoBehaviour
             
         }
     }
+
+    private void OnTriggerStay(Collider o)
+    {
+        if (! o.CompareTag("Enemy"))
+        {
+            hostiles.Remove(o.gameObject);
+        }
+    }
     GameObject FindClosestHostile(){
         GameObject closest = null;
         float lowest_dist = Mathf.Infinity;
@@ -63,7 +71,7 @@ public class Turret_TA : MonoBehaviour
         {
             GameObject o = hostiles[i];
             float dist = Vector3.Distance(o.transform.position, transform.position);
-            if (dist < lowest_dist)
+            if (dist < lowest_dist && o.CompareTag("Enemy"))
             {
                 closest = o;
                 lowest_dist = dist;
@@ -75,7 +83,7 @@ public class Turret_TA : MonoBehaviour
         return closest;
     }
 
-    void UntargetMissingObjects()
+    void CleanTargetList()
     {
         for (var i = hostiles.Count - 1; i > -1; i--)
         {
@@ -114,7 +122,7 @@ public class Turret_TA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UntargetMissingObjects();
+        CleanTargetList();
         
         if (current_target != null && turretHead != null)
         {

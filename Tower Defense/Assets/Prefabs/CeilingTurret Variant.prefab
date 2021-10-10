@@ -11,6 +11,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: CeilingTurret Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2224047856603544543, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: c7de6f04da5ad2844b1937c5caa1e2d7, type: 2}
+    - target: {fileID: 2224047856603544543, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 989451256620863011, guid: d7aa8cffbce877840bd85d02409d5f68, type: 3}
+    - target: {fileID: 2224047856603544543, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: firePoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712653573493609490, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712653573493609490, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716515602378264104, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3605146044611546986, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -95,6 +119,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5843348835896949186, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843348835899205378, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429452445898551674, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429452445900746682, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6938956425108112797, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
       propertyPath: turnspd
       value: 200
@@ -105,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6938956425108112797, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
       propertyPath: targetingRange
-      value: 60
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
