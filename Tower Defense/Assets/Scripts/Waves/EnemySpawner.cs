@@ -13,6 +13,14 @@ public class EnemySpawner : MonoBehaviour
     public float timeBtwnRound = 5f;
     public int maxGoonCount = 5;
     public int goonCount = 0;
+    public int goonsKilled = 0;
+
+    public static EnemySpawner inst;
+
+    private void Awake()
+    {
+        inst = this;
+    }
 
     void Start()
     {
