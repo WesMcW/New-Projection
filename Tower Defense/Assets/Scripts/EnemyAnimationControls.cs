@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAnimationControls : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyAnimationControls : MonoBehaviour
     float waitingTime;
     float velocity;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,13 @@ public class EnemyAnimationControls : MonoBehaviour
         waitingTime = 0;
         velocity = 0;
 
+        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = true;
+
+            Collider col = rb.GetComponent<Collider>();
+            col.isTrigger = true;
+        }
 
         animator.enabled = true;
     }
@@ -34,7 +43,8 @@ public class EnemyAnimationControls : MonoBehaviour
 
         if (waitingTime > deathTime)
         {
-            //enableRagdoll();
+            gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
+            enableRagdoll();
         }
 
         animator.SetFloat("Velocity", velocity);
