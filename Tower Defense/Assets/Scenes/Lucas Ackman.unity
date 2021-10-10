@@ -1069,6 +1069,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: backOffset.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: leftOffset.x
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: leftOffset.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: leftOffset.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: animationTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: rightOffset.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: rightOffset.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: rightOffset.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: forwardOffset.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079200, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: forwardOffset.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701425320039952, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701425320039967, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: near clip plane
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1008549093365259104, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1113,5 +1161,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4017340131838637609, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
