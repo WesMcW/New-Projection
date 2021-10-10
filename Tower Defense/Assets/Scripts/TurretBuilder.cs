@@ -44,7 +44,7 @@ public class TurretBuilder : MonoBehaviour
         {
             inRange = true;
 
-            if (Input.GetKey(KeyCode.B) && other.gameObject.GetComponent<CollectableManager>().currencyAmount >= cost)
+            if (Input.GetKeyDown(KeyCode.B) && other.gameObject.GetComponent<CollectableManager>().currencyAmount >= cost)
             {
                 //Build the turret at this turret location
                 turret.gameObject.SetActive(true);
