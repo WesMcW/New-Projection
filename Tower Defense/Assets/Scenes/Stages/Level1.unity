@@ -7221,7 +7221,7 @@ MonoBehaviour:
   enemyInstance: {fileID: 8421426187224926395, guid: 35bb50ab09e7839489d961753a90748a, type: 3}
   spawning: 0
   canSpawn: 1
-  timeBtwnEachGoon: 3
+  timeBtwnEachGoon: 2
   timeBtwnRound: 5
   maxGoonCount: 5
   goonCount: 0
