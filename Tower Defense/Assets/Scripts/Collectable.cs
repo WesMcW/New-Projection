@@ -27,7 +27,8 @@ public class Collectable : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<CollectableManager>())
             {
-                collision.gameObject.GetComponent<CollectableManager>().currencyAmount = collision.gameObject.GetComponent<CollectableManager>().currencyAmount + addAmount;
+                collision.gameObject.GetComponent<CollectableManager>().currencyAmount += addAmount;
+                Destroy(gameObject);
             }
            
         }
