@@ -5743,7 +5743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450213733574943617, guid: 7b1c74ee7f6ef4647b36203dacbdd6ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.487764
+      value: 14.236
       objectReference: {fileID: 0}
     - target: {fileID: 3450213733574943617, guid: 7b1c74ee7f6ef4647b36203dacbdd6ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5751,7 +5751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450213733574943617, guid: 7b1c74ee7f6ef4647b36203dacbdd6ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -63.107662
+      value: -47.383
       objectReference: {fileID: 0}
     - target: {fileID: 3450213733574943617, guid: 7b1c74ee7f6ef4647b36203dacbdd6ae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13378,6 +13378,10 @@ PrefabInstance:
     - target: {fileID: 483229459292635610, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 753701424061079213, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 753701425320039953, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: mouseSensibility
