@@ -21,7 +21,10 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
-            Destroy(gameObject);
+        {
+            GetComponentInChildren<EnemyAnimationControls>().enableRagdoll();
+            Invoke("Death", 2f);
+        }
     }
 
     private void OnCollisionEnter(Collision c)
@@ -38,5 +41,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 }

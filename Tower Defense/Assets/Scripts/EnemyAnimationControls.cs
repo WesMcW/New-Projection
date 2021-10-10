@@ -19,7 +19,7 @@ public class EnemyAnimationControls : MonoBehaviour
 
     }
 
-    void enableRagdoll()
+    public void enableRagdoll()
     {
         gameObject.GetComponentInParent<NavMeshAgent>().enabled = false;
         foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
