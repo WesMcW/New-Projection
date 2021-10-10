@@ -102,12 +102,12 @@ public class Turret_TA : MonoBehaviour
             if (hit.transform.CompareTag("Enemy"))
             {
                 Debug.DrawRay(shootingfrom, turretHead.forward * hit.distance, Color.red);
-                Debug.Log("Did Hit");
+                //Debug.Log("Did Hit");
                 return true;
             } else
             {
                 Debug.DrawRay(shootingfrom, turretHead.forward, Color.white);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
                 return false;
             }
 
@@ -115,7 +115,7 @@ public class Turret_TA : MonoBehaviour
         else
         {
             Debug.DrawRay(shootingfrom, turretHead.forward, Color.white);
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
             return false;
         }
     }
