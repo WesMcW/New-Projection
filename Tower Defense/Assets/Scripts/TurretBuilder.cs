@@ -13,6 +13,8 @@ public class TurretBuilder : MonoBehaviour
     Turret_TA targetingsystem;
     GameObject turretManagers;
     float distfromplayer;
+    public int cost;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +41,11 @@ public class TurretBuilder : MonoBehaviour
         {
             inRange = true;
 
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKey(KeyCode.B) && other.gameObject.GetComponent<CollectableManager>().currencyAmount >= cost)
             {
                 //Build the turret at this turret location
                 turret.gameObject.SetActive(true);
+                other.gameObject.GetComponent<CollectableManager>().currencyAmount -= cost;
             }
         }
     }
