@@ -12,6 +12,7 @@ public class TurretBuilder : MonoBehaviour
     private GameObject playerobj;
     Turret_TA targetingsystem;
     GameObject turretManagers;
+    float distfromplayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class TurretBuilder : MonoBehaviour
         if (other.attachedRigidbody == null)
             return;
 
-        float distfromplayer = Vector3.Distance(transform.position, playerobj.transform.position);
+        distfromplayer = Vector3.Distance(transform.position, playerobj.transform.position);
 
         if (other.attachedRigidbody.CompareTag("Player") && distfromplayer <= buildRange)
         {
