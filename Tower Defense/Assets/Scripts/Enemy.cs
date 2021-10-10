@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Hub"))
         {
             other.gameObject.GetComponent<HubHealth>().hubHp -= damage;
+            EnemySpawner.inst.goonsKilled += 1;
             Destroy(gameObject);
         }
     }
