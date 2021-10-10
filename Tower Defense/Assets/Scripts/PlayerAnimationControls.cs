@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimationControls : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
     public GameObject camera;
 
     public Vector3 forwardOffset;
@@ -22,6 +22,8 @@ public class PlayerAnimationControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         camDefault = new Vector3(camera.transform.localPosition.x, camera.transform.localPosition.y, camera.transform.localPosition.z);
         forwardOffset += camDefault;
         leftOffset += camDefault;
@@ -35,7 +37,7 @@ public class PlayerAnimationControls : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         float horz = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey("w"))
+        if (vert == 1)
         {
             if (animationStatus.z < animationTime)
             {
@@ -55,7 +57,7 @@ public class PlayerAnimationControls : MonoBehaviour
             animator.SetFloat("Velocity Z", animationStatus.z);
         }
 
-        if (Input.GetKey("d"))
+        if (horz == 1)
         {
             if (animationStatus.x < animationTime)
             {
@@ -74,7 +76,7 @@ public class PlayerAnimationControls : MonoBehaviour
             animator.SetFloat("Velocity X", animationStatus.x);
         }
 
-        if (Input.GetKey("s"))
+        if (vert == -1)
         {
             if (animationStatus.z > -animationTime)
             {
@@ -93,7 +95,7 @@ public class PlayerAnimationControls : MonoBehaviour
             animator.SetFloat("Velocity Z", animationStatus.z);
         }
 
-        if (Input.GetKey("a"))
+        if (horz == -1)
         {
             if (animationStatus.x > -animationTime)
             {
@@ -115,18 +117,18 @@ public class PlayerAnimationControls : MonoBehaviour
         if (animationStatus.z > camStatus)
         {
             camera.transform.localPosition = forwardOffset;
-        } 
-        else if (animationStatus.z < -camStatus)
-        {
-            camera.transform.localPosition = backOffset;
-        } 
+        }
         else if (animationStatus.x > camStatus)
         {
             camera.transform.localPosition = rightOffset;
-        } 
+        }
         else if (animationStatus.x < -camStatus)
         {
             camera.transform.localPosition = leftOffset;
+        }
+        else if (animationStatus.z < -camStatus)
+        {
+            camera.transform.localPosition = backOffset;
         }
         else
         {
