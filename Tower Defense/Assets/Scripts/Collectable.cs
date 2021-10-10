@@ -16,7 +16,10 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 rotation = new Vector3(0, 0, 0);
+        rotation.x = transform.rotation.x;
+        rotation.y = transform.rotation.y;
+        rotation.z = transform.rotation.z;
     }
 
     void OnCollisionEnter(Collision collision)

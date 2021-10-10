@@ -2090,13 +2090,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acdc7f39a4bd994baf176f604160e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocation: {fileID: 793383876}
+  spawnLocation: []
   roundCount: 0
   enemyInstance: {fileID: 8421426187224926395, guid: 35bb50ab09e7839489d961753a90748a, type: 3}
   spawning: 0
   canSpawn: 1
   timeBtwnEachGoon: 3
+  timeBtwnRound: 5
   maxGoonCount: 5
+  goonCount: 0
+  goonsKilled: 0
 --- !u!135 &793383873
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4789,6 +4792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 753701425320039952, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 1008549093365259104, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4831,6 +4838,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008549093365259104, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267372911257358442, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267372911257358442, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
