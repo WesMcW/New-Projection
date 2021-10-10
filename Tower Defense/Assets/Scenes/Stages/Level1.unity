@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 504a7fb3552b0854b8962e995103e404, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f13c383fc7316a444a13d8a183e20c8a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7416,7 +7416,7 @@ MonoBehaviour:
   enemyInstance: {fileID: 8421426187224926395, guid: 35bb50ab09e7839489d961753a90748a, type: 3}
   spawning: 0
   canSpawn: 1
-  timeBtwnEachGoon: 2
+  timeBtwnEachGoon: 1
   timeBtwnRound: 5
   maxGoonCount: 5
   goonCount: 0
@@ -14081,10 +14081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6689520810549759576, guid: c003de2d1c44d6549b41b45a07f33031, type: 3}
-      propertyPath: hubHp
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6689520810549759576, guid: c003de2d1c44d6549b41b45a07f33031, type: 3}
       propertyPath: loseScreen
       value: 
