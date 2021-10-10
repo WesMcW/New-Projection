@@ -29,15 +29,19 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.CompareTag("Hub"))
-        {
-            c.gameObject.GetComponent<HubHealth>().hubHp -= damage;
-            Destroy(gameObject);
-        }
         if (c.gameObject.CompareTag("Bullet"))
         {
             health -= c.gameObject.GetComponent<Projectile>().dmg;
             Destroy(c.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Hub"))
+        {
+            other.gameObject.GetComponent<HubHealth>().hubHp -= damage;
+            Destroy(gameObject);
         }
     }
 
