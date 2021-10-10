@@ -12154,6 +12154,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 930384847, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
+      propertyPath: currencyAmount
+      value: 9999
+      objectReference: {fileID: 0}
     - target: {fileID: 483229459292635610, guid: a0d103b6d59e7164ea1e144ae2586596, type: 3}
       propertyPath: m_Name
       value: Player
@@ -58020,6 +58024,26 @@ PrefabInstance:
     - target: {fileID: 4875192569299760987, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
       propertyPath: targetingRange
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316858155265021222, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301117835125162454, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7.795
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301117835125162454, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 7.795
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301117835125162454, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301117835125162454, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c23d70f26ce584eb45f09b7dfab01d, type: 3}

@@ -14,7 +14,7 @@ public class WepCore : MonoBehaviour
     private float reloadTime;
     private int clipSize;
     private int clipCurrent;
-    private int dps; //damage per shot
+    
     private float curr_fireRate;
     public bool reloading = false;
     public Transform[] firePoints;
@@ -29,6 +29,7 @@ public class WepCore : MonoBehaviour
     private Text rld;
     public float spinupTime;
     public float maxFireRate;
+    public int dps; //damage per shot
     private float curr_spinup;
     private void Start()
     {

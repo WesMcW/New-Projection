@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurretBuilder : MonoBehaviour
 {
+    [SerializeField] Text buyText;
     public float buildRange;
     public bool inRange = false;
     public Transform location;
@@ -20,10 +23,11 @@ public class TurretBuilder : MonoBehaviour
         targetingsystem = GetComponent<Turret_TA>();
         playerobj = GameObject.Find("Player");
         turret.gameObject.SetActive(false);
+        buyText.text = String.Format("Buy {0} for {1}", targetingsystem.weapon.stats.name, cost);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
@@ -45,6 +49,7 @@ public class TurretBuilder : MonoBehaviour
                 //Build the turret at this turret location
                 turret.gameObject.SetActive(true);
                 other.gameObject.GetComponent<CollectableManager>().currencyAmount -= cost;
+                buyText.text = String.Format("{0}, {1} dmg", targetingsystem.weapon.stats.name, targetingsystem.weapon.dps);
             }
         }
     }
