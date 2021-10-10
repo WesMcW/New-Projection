@@ -6,6 +6,8 @@ public class Turret_TA : MonoBehaviour
 {
     // Will use the collider on the Managers object as a targeting range. Using 'OnCollision'.
     // Start is called before the first frame update
+    [SerializeField] bool onGround;
+    [SerializeField] float targetingRange;
     CapsuleCollider targetingCollider;
     GameObject current_target;
     public WepCore weapon; // this and turret head need to be referencing the object spawned by turret builder
@@ -16,6 +18,7 @@ public class Turret_TA : MonoBehaviour
     void Start()
     {
         targetingCollider = GetComponent<CapsuleCollider>();
+        targetingCollider.radius = targetingRange;
     }
 
     public void UpdateWeapons(GameObject w)
@@ -117,7 +120,8 @@ public class Turret_TA : MonoBehaviour
         {
             // Rotate turret head to face the target
             Vector3 lookv = current_target.transform.position - turretHead.position;
-            lookv.y = 0;
+            if (onGround)
+                lookv.y = 0;
             var m_lookAtRotation = Quaternion.LookRotation(lookv);
            
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33997809937026312}
   - component: {fileID: 23858935835842898}
   - component: {fileID: 65195777614129130}
+  - component: {fileID: 8635239356502088745}
   m_Layer: 0
   m_Name: Desktop_Part_01
   m_TagString: Untagged
@@ -55,6 +56,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -68,6 +71,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -80,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &65195777614129130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,6 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.397713, y: 1.3430827, z: 1.3617392}
   m_Center: {x: 1.0454336, y: 0.6715412, z: 0.5}
+--- !u!208 &8635239356502088745
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798896697049772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.199, y: 0.67200005, z: 0.68100005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.0450001, y: 0.67200005, z: 0.5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1870454625298416
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TurretBuilder : MonoBehaviour
 {
-    
     public float buildRange;
     public bool inRange = false;
     public Transform location;
