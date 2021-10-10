@@ -24,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        roundCount = 0;
         StartSpawning();
     }
 

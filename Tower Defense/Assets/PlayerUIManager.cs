@@ -23,6 +23,6 @@ public class PlayerUIManager : MonoBehaviour
         roundCount.text = spawner.roundCount.ToString();
 
         currencyCount.text = GetComponent<CollectableManager>().currencyAmount.ToString();
-        roundCount.text;
+        roundCount.text = EnemySpawner.inst.roundCount.ToString();
     }
 }

@@ -6938,7 +6938,7 @@ MonoBehaviour:
   spawnLocation:
   - {fileID: 205391971}
   - {fileID: 1166519202}
-  roundCount: 0
+  roundCount: 1
   enemyInstance: {fileID: 8421426187224926395, guid: 35bb50ab09e7839489d961753a90748a, type: 3}
   spawning: 0
   canSpawn: 1
