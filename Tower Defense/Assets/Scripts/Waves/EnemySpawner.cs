@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform spawnLocation;
+    public List<Transform> spawnLocation = new List<Transform>();
     public int roundCount;
     public GameObject enemyInstance;
     public bool spawning = false;
     public bool canSpawn = false;
     public float timeBtwnEachGoon = 1f;
+    public float timeBtwnRound = 5f;
     public int maxGoonCount = 5;
-    int goonCount = 0;
+    public int goonCount = 0;
 
     void Start()
     {
         roundCount = 0;
         StartSpawning();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            StartCoroutine("RoundWait");
     }
 
     public void StartSpawning()
@@ -30,20 +37,31 @@ public class EnemySpawner : MonoBehaviour
         DeployTheGoons();
         yield return new WaitForSeconds(timeBtwnEachGoon);
 
-        if (canSpawn) StartCoroutine("Spawning");
+        if (spawning) StartCoroutine("Spawning");
     }
 
     public void DeployTheGoons()
     {
+        int rand = Random.Range(0, spawnLocation.Count);
+
         if (goonCount < maxGoonCount)
         {
-            Instantiate(enemyInstance, spawnLocation.position, Quaternion.identity);
+            Instantiate(enemyInstance, spawnLocation[rand].position, Quaternion.identity);
             goonCount++;
         }
 
         if (goonCount == maxGoonCount)
         {
-            canSpawn = false;
+            StopCoroutine("Spawning");
+            spawning = false;
+            goonCount = 0;
+            //canSpawn = false;
         }
+    }
+
+    public IEnumerator RoundWait()
+    {
+        yield return new WaitForSeconds(timeBtwnRound);
+        StartSpawning();
     }
 }
