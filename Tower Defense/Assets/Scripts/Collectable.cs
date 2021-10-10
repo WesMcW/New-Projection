@@ -7,8 +7,6 @@ public class Collectable : MonoBehaviour
 
     public int addAmount = 0;
 
-    int amount = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +25,7 @@ public class Collectable : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<CollectableManager>())
             {
+                CollectableSpawner.inst.timeDelay();
                 collision.gameObject.GetComponent<CollectableManager>().currencyAmount += addAmount;
                 Destroy(gameObject);
             }

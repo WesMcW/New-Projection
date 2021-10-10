@@ -27,7 +27,7 @@ public class Turret_TA : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        Debug.Log("Trigger Enter");
+        //Debug.Log("Trigger Enter");
 
         //using on trigger because its not physical collider
         if (c.CompareTag("Enemy"))
@@ -41,12 +41,12 @@ public class Turret_TA : MonoBehaviour
 
     private void OnTriggerExit(Collider c)
     {
-        Debug.Log("Trigger Exit");
+        //Debug.Log("Trigger Exit");
 
         //using on trigger because its not physical collider
         if (c.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy detected leaving range");
+            //Debug.Log("Enemy detected leaving range");
             count_inrange--;
             int enemyidx = hostiles.IndexOf(c.gameObject);
             hostiles.RemoveAt(enemyidx);
