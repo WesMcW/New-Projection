@@ -34,85 +34,20 @@ public class PlayerAnimationControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float vert = Input.GetAxis("Vertical");
-        float horz = Input.GetAxis("Horizontal");
+        float vert = Input.GetAxisRaw("Vertical");
+        float horz = Input.GetAxisRaw("Horizontal");
 
-        if (vert == 1)
-        {
-            if (animationStatus.z < animationTime)
-            {
-                animationStatus.z += Time.deltaTime;
-            } 
+        float statusZ = animationStatus.z;
+        float statusX = animationStatus.x;
 
-            animator.SetFloat("Velocity Z", animationStatus.z);
-        } 
+        if(vert > 0)
+            animationStatus.z = positiveGraph(vert, statusZ, "Velocity Z");
         else
-        {
-            if (animationStatus.z > 0)
-            {
-                animationStatus.z -= 2.5f * Time.deltaTime;
-            }
-            else 
-
-            animator.SetFloat("Velocity Z", animationStatus.z);
-        }
-
-        if (horz == 1)
-        {
-            if (animationStatus.x < animationTime)
-            {
-                animationStatus.x += Time.deltaTime;
-            } 
-
-            animator.SetFloat("Velocity X", animationStatus.x);
-        } 
+            animationStatus.z = negativeGraph(vert, statusZ, "Velocity Z");
+        if(horz > 0)
+            animationStatus.x = positiveGraph(horz, statusX, "Velocity X");
         else
-        {
-            if (animationStatus.x > 0)
-            {
-                animationStatus.x -= 2.5f * Time.deltaTime;
-            } 
-
-            animator.SetFloat("Velocity X", animationStatus.x);
-        }
-
-        if (vert == -1)
-        {
-            if (animationStatus.z > -animationTime)
-            {
-                animationStatus.z -= Time.deltaTime;
-            }
-
-            animator.SetFloat("Velocity Z", animationStatus.z);
-        }
-        else
-        {
-            if (animationStatus.z < 0)
-            {
-                animationStatus.z += 2.5f * Time.deltaTime;
-            }
-
-            animator.SetFloat("Velocity Z", animationStatus.z);
-        }
-
-        if (horz == -1)
-        {
-            if (animationStatus.x > -animationTime)
-            {
-                animationStatus.x -= Time.deltaTime;
-            }
-
-            animator.SetFloat("Velocity X", animationStatus.x);
-        }
-        else
-        {
-            if (animationStatus.x < 0)
-            {
-                animationStatus.x += 2.5f * Time.deltaTime;
-            }
-
-            animator.SetFloat("Velocity X", animationStatus.x);
-        }
+            animationStatus.x = negativeGraph(horz, statusX, "Velocity X");
 
         if (animationStatus.z > camStatus)
         {
@@ -136,7 +71,7 @@ public class PlayerAnimationControls : MonoBehaviour
         }
     }
 
-    void positiveGraph(float direction, float status)
+    float positiveGraph(float direction, float status, string name)
     {
         if (direction == 1)
         {
@@ -148,26 +83,36 @@ public class PlayerAnimationControls : MonoBehaviour
         else if (status > 0)
         {
             status -= 2.5f * Time.deltaTime;
+        } else
+        {
+            status = 0;
         }
 
-        animator.SetFloat("Velocity Z", status);
+        animator.SetFloat(name, status);
+
+        return status;
     }
     
 
-    void negativeGraph(float direction, float status)
+    float negativeGraph(float direction, float status, string name)
     {
         if (direction == -1)
         {
             if (status > -animationTime)
             {
                 status -= Time.deltaTime;
-          }
+            }
         }
         else if (status < 0)
         {
             status += 2.5f * Time.deltaTime;
+        } else
+        {
+            status = 0;
         }
         
-        animator.SetFloat("Velocity X", status);
+        animator.SetFloat(name, status);
+
+        return status;
     }
 }
