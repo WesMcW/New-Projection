@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class TurretBuilder : MonoBehaviour
 {
+    
+    public float buildRange;
     public bool inRange = false;
     public Transform location;
     public GameObject turret;
-
+    private GameObject playerobj;
+    Turret_TA targetingsystem;
+    GameObject turretManagers;
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetingsystem = GetComponent<Turret_TA>();
+        playerobj = GameObject.Find("Player");
+        turret.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,15 +28,20 @@ public class TurretBuilder : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        // if there's no rigid body we already know its not a player so be done
+        if (other.attachedRigidbody == null)
+            return;
+
+        float distfromplayer = Vector3.Distance(transform.position, playerobj.transform.position);
+
+        if (other.attachedRigidbody.CompareTag("Player") && distfromplayer <= buildRange)
         {
             inRange = true;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.B))
             {
                 //Build the turret at this turret location
-                gameObject.SetActive(false);
-                Instantiate(turret, location.transform.position, Quaternion.identity);
+                turret.gameObject.SetActive(true);
             }
         }
     }

@@ -21,22 +21,28 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
-            Destroy(gameObject);
+        {
+            GetComponentInChildren<EnemyAnimationControls>().enableRagdoll();
+            Invoke("Death", 2f);
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision c)
     {
-        if (other.gameObject.CompareTag("Hub"))
+        if (c.gameObject.CompareTag("Hub"))
         {
-            other.gameObject.GetComponent<HubHealth>().hubHp -= damage;
+            c.gameObject.GetComponent<HubHealth>().hubHp -= damage;
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Bullet"))
+        if (c.gameObject.CompareTag("Bullet"))
         {
-            //health -= other.gameObject.GetComponent<Projectile>().damage;
-            Destroy(other.gameObject);
+            health -= c.gameObject.GetComponent<Projectile>().dmg;
+            Destroy(c.gameObject);
         }
     }
 
-
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 }
