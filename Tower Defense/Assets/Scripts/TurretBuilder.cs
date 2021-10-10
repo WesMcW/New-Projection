@@ -23,7 +23,7 @@ public class TurretBuilder : MonoBehaviour
         targetingsystem = GetComponent<Turret_TA>();
         playerobj = GameObject.Find("Player");
         turret.gameObject.SetActive(false);
-        buyText.text = String.Format("Buy {0} for {1}", targetingsystem.weapon.stats.name, cost);
+        buyText.text = String.Format("Buy {0} for {1}", targetingsystem.weapon.stats.name, cost*2);
     }
 
     // Update is called once per frame
