@@ -2090,7 +2090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acdc7f39a4bd994baf176f604160e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocation: []
+  spawnLocation:
+  - {fileID: 793383876}
   roundCount: 0
   enemyInstance: {fileID: 8421426187224926395, guid: 35bb50ab09e7839489d961753a90748a, type: 3}
   spawning: 0
