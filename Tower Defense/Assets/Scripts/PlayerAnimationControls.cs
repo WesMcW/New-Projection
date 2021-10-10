@@ -135,4 +135,39 @@ public class PlayerAnimationControls : MonoBehaviour
             camera.transform.localPosition = camDefault;
         }
     }
+
+    void positiveGraph(float direction, float status)
+    {
+        if (direction == 1)
+        {
+            if (status < animationTime)
+            {
+                status += Time.deltaTime;
+            }
+        }
+        else if (status > 0)
+        {
+            status -= 2.5f * Time.deltaTime;
+        }
+
+        animator.SetFloat("Velocity Z", status);
+    }
+    
+
+    void negativeGraph(float direction, float status)
+    {
+        if (direction == -1)
+        {
+            if (status > -animationTime)
+            {
+                status -= Time.deltaTime;
+          }
+        }
+        else if (status < 0)
+        {
+            status += 2.5f * Time.deltaTime;
+        }
+        
+        animator.SetFloat("Velocity X", status);
+    }
 }
