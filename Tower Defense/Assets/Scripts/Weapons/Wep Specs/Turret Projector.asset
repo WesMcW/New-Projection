@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Turret Projector
   m_EditorClassIdentifier: 
   wepName: Turret Projector
-  reloadTime: 0.5
-  timeBetweenShot: 0.2
-  ammo_clipSize: 100
+  reloadTime: 3
+  timeBetweenShot: 0.4
+  ammo_clipSize: 1
   ammo_clipCurrent: 100
   dps: 1
   reloading: 0
