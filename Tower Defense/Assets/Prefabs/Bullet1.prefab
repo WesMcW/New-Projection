@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f500e61958a7c59499cdbe78a0f1137d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 4
-  bullet_velocity: 34
+  dmg: 7
+  bullet_velocity: 76
   TTL: 1
 --- !u!33 &4792290679607525053
 MeshFilter:

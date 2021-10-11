@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
-  bullet_velocity: 34
+  bullet_velocity: 42
   TTL: 1
 --- !u!33 &4792290679607525053
 MeshFilter:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: E-LMG
   m_EditorClassIdentifier: 
   wepName: Turret Projector
-  reloadTime: 5
+  reloadTime: 0.25
   timeBetweenShot: 0.25
   ammo_clipSize: 100
   ammo_clipCurrent: 100

@@ -106,7 +106,7 @@ public class Turret_TA : MonoBehaviour
                 return true;
             } else
             {
-                Debug.DrawRay(shootingfrom, turretHead.forward, Color.white);
+                Debug.DrawRay(shootingfrom, turretHead.forward * targetingRange, Color.white);
                 //Debug.Log("Did not Hit");
                 return false;
             }
@@ -114,7 +114,7 @@ public class Turret_TA : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(shootingfrom, turretHead.forward, Color.white);
+            Debug.DrawRay(shootingfrom, turretHead.forward * targetingRange, Color.white);
             //Debug.Log("Did not Hit");
             return false;
         }
@@ -127,7 +127,10 @@ public class Turret_TA : MonoBehaviour
         if (current_target != null && turretHead != null)
         {
             // Rotate turret head to face the target
-            Vector3 lookv = current_target.transform.position - turretHead.position;
+            Vector3 targpos = current_target.transform.position;
+            // adjust aim more towards chest
+            targpos.y += 1;
+            Vector3 lookv = targpos - turretHead.position;
             if (onGround)
                 lookv.y = 0;
             var m_lookAtRotation = Quaternion.LookRotation(lookv);

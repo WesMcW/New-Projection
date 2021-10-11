@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Snipper
   m_EditorClassIdentifier: 
   wepName: Sniper
-  reloadTime: 3
+  reloadTime: 2.5
   timeBetweenShot: 2.5
-  ammo_clipSize: 5
-  ammo_clipCurrent: 5
-  dps: 4
+  ammo_clipSize: 100
+  ammo_clipCurrent: 100
+  dps: 7
   reloading: 0
   allowHoldToShoot: 1
