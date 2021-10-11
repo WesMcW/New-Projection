@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: targetingRange
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 8110870249880552795, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8380623670021613536, guid: 0bbf16668f0063945b77d35063e3dad3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0

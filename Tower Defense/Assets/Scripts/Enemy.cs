@@ -19,7 +19,19 @@ public class Enemy : MonoBehaviour
         target = GameObject.Find("Hub").transform;
         agent.SetDestination(target.transform.position);
     }
+    private void OnEnable()
+    {
+        // for each round above round 5 start adding HP in a linear way
+        if (EnemySpawner.globalRoundCount >= 5)
+        {
+            int howfarfromfive = EnemySpawner.globalRoundCount - 5;
+            for (int i = 0; i < howfarfromfive; i++)
+            {
+                health += 2; // adds 2 hp for each round above 5
+            }
+        }
 
+    }
     private void Update()
     {
         if (health <= 0)

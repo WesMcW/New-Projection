@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public List<Transform> spawnLocation = new List<Transform>();
     public int roundCount;
+    public static int globalRoundCount;
     public GameObject enemyInstance;
     public bool spawning = false;
     public bool canSpawn = false;
@@ -73,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
         goonsKilled = 0;
         yield return new WaitForSeconds(timeBtwnRound);
         roundCount++;
+        globalRoundCount = roundCount;
         StartSpawning();
     }
 }

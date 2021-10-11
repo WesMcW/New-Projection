@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5825255922989806352}
   - component: {fileID: 2280483709582700588}
   - component: {fileID: 2093702270686850188}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FloatingDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 8380623670021613536}
   - component: {fileID: 2403669542031944462}
   - component: {fileID: 94012602443659608}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BuyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

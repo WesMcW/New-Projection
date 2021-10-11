@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed;
+    [SerializeField] Transform myhub;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.F12))
+            transform.position = myhub.position;
         float horz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
 
